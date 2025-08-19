@@ -1,9 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Header } from "@/components/common/header";
 
 const Home = () => {
   return (
     <div>
-      <Button className="p-2 m-2">Click me</Button>
+      <Header />
     </div>
   );
 };

@@ -81,7 +81,7 @@ const SignUpForm = () => {
 
   return (
     <Card>
-      <CardHeader>
+      <CardHeader className="w-full">
         <CardTitle>Criar conta</CardTitle>
         <CardDescription>Crie uma conta para continuar.</CardDescription>
       </CardHeader>
