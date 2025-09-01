@@ -2,6 +2,7 @@ import { Header } from "@/components/common/header";
 import ProductList from "@/components/common/product-list";
 import Image from "next/image";
 import { db } from "@/db";
+import CategorySelector from "@/components/common/category-selector";
 
 const Home = async () => {
   const products = await db.query.productTable.findMany({
@@ -9,6 +10,8 @@ const Home = async () => {
       variants: true,
     },
   });
+
+  const categories = await db.query.categoryTable.findMany();
 
   console.log(products);
 
@@ -27,6 +30,9 @@ const Home = async () => {
           />
         </div>
         <ProductList products={products} title="Mais vendidos" />
+        <div className="px-5">
+          <CategorySelector categories={categories} />
+        </div>
 
         <div className="px-5">
           <Image
